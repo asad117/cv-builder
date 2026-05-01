@@ -52,3 +52,10 @@ html, body {
     page-break-inside: avoid;
   }
 }
+@media (max-width: 650px) {
+
+.resume-wrapper{
+  padding: 0px;
+}
+
+}

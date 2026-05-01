@@ -3,7 +3,7 @@ import { useResumeStore } from "@/store/useResumeStore";
 export default function ResumeTemplate() {
   const { data, template } = useResumeStore();
 
-  const basePaperStyles = "w-full min-h-[297mm] bg-white text-black leading-tight shadow-none";
+  const basePaperStyles = "w-full min-h-[297mm] bg-white text-black leading-tight shadow-none resume-wrapper";
 
   const templateConfigs: Record<string, string> = {
     modern: `${basePaperStyles} font-sans p-12`,
@@ -18,7 +18,7 @@ export default function ResumeTemplate() {
   // 1. PROFESSIONAL TEMPLATE (Your Requested Format)
   if (template === 'professional') {
     return (
-      <div className={templateConfigs.professional}>
+      <div className={`${templateConfigs.professional} resume-wrapper`}>
         {/* HEADER */}
         <header className="text-center border-b border-slate-300 pb-4 mb-6">
           <h1 className="text-2xl font-bold text-slate-900 uppercase tracking-tight">{data.personalInfo.fullName}</h1>
