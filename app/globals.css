@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* app/globals.css */
+
+@media print {
+    @page {
+    size: auto;
+    margin: 0mm; /* We will handle margins via the container instead */
+  }
+
+
+  body {
+    /* Prevents the browser from adding its own header/footer (date/url) */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Ensures the container doesn't get cut awkwardly */
+  .print-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+    /* header, footer {
+    display: none !important;
+  } */
+
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+
+  p, li {
+    page-break-inside: avoid;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+}
